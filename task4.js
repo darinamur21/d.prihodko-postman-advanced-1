@@ -7,36 +7,23 @@ Create object "utils". It should contain:
 
 const utils = {
   getRandomNumber(count) {
-    let result = Math.floor(Math.random()*count);
-    return result;
+    return Math.floor(Math.random() * count);
   },
   getRandomString(length) {
-    let result           = '';
-    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let charactersLength = characters.length;
-    for ( let i = 0; i < length; i++ ) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-
+    let result =  "";
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
-},
+  },
   logger(level, message) {
     console.log(`[${level.toUpperCase()}]:`, message)
-} 
+  }
 };
 
 const newUtils = Object.create(utils);
-console.log("Random number: ", newUtils.getRandomNumber(10000000));
-
-
-console.log("Random alphanumeric string: ", newUtils.getRandomString(10));
-
-let loggerLvl = 'info';
-let messageFoLog = 'message';
-console.log(newUtils.logger(loggerLvl, messageFoLog));
-
-
-// console.log(utils.getRandomNumer);
-// module.exports = {
-//   utils,
-// };
+console.log(newUtils.getRandomNumber(15));
+console.log(newUtils.getRandomString(15));
+console.log(newUtils.logger('WARN', 'message'));

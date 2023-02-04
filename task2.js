@@ -130,26 +130,20 @@ const planets = {
       url: 'https://swapi.co/api/planets/11/',
     },
   ],
-
 };
 
-console.log('Planets where "diameter" <= 10000');
-// update only this function
 function extractSmallPlanets(planetsObject, boundaryValue) {
-  return console.log(planetsObject.results.filter(planet => (planet.diameter<=boundaryValue)));
+  return planetsObject.results.filter(planet => (planet.diameter <= boundaryValue));
 }
+
 const dimr = 10000;
 extractSmallPlanets(planets, dimr);
 
-console.log('====================================');
-console.log('Planets, where "diameter" > 10000');
-// update only this function
 function extractBigPlanets(planetsObject, boundaryValue) {
-  return console.log(planetsObject.results.filter(planet => planet.diameter>boundaryValue));
+  return planetsObject.results.filter(planet => planet.diameter > boundaryValue);
 }
 
 extractBigPlanets(planets, dimr);
-
 
 // module.exports = {
 //   planets,
